@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-client-a/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-client-b/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-server-2/pom.xml" />
+        <option value="$PROJECT_DIR$/eurekaserver-3/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-client-c/pom.xml" />
+        <option value="$PROJECT_DIR$/Openfeign/pom.xml" />
+        <option value="$PROJECT_DIR$/hystrix/pom.xml" />
+        <option value="$PROJECT_DIR$/hystrix/coustom-service/pom.xml" />
+        <option value="$PROJECT_DIR$/hystrix/customer-service/pom.xml" />
+        <option value="$PROJECT_DIR$/hystrix/rent-car-service/pom.xml" />
+        <option value="$PROJECT_DIR$/hystrix/MyHystrix/pom.xml" />
+        <option value="$PROJECT_DIR$/hystrix/admin-service/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/order-service/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

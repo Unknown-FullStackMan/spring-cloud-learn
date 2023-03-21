@@ -1,0 +1,45 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: rent-car-service
+
+
+eureka:
+  client: #客户端相关配置
+    service-url: #指定注册地址
+      defaultZone: http://54.250.188.224:8761/eureka
+    register-with-eureka: true #可以配置false 意味着不往eureka-server注册
+    fetch-registry: true #应用是否去拉去服务列表到本地
+    registry-fetch-interval-seconds: 10 #拉去服务列表的间隔时间
+
+  instance:
+    hostname: localhost
+    instance-id: ${eureka.instance.hostname}:${spring.application.name}:${server.port} #主机名称：应用名:端口
+    prefer-ip-address: true #以IP的形式显示具体的服务信息
+    lease-renewal-interval-in-seconds: 5  #服务实例的续约的时间间隔
+
+
+##可以在yml文件中配置访问服务可以使用不同的算法规则
+#provider:
+#  ribbon:
+#    NFLoadBalanceRuleClassName: com.netflix.loadbalancer.RandomRule   #几种算法的全限定类名
+
+ribbon:
+  eager-load:
+    enabled: true  #ribbon需要去eureka中获取服务列表，如果是false就是懒加载(调用的服务的时候才会去获取)，ture就是服务一启动就会去加载eureka的服务列表
+  eureka:
+    enabled: true
+  http:
+    client:
+      enabled: false  #使用httpClient工具发请求,记得加上httpClient的pom依赖
+  okhttp:
+    enabled: true
+  ReadTimeout: 3000 #响应等待超时时间
+  ConnectTimeout: 3000 #链接服务接口的超时时间
+
+
+logging:
+  level:
+    cn.simple.eurekaclient.feign.ProviderOrderFeign: info  #打印这个接口下面的日志

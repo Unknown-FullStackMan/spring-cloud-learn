@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/eureka-client-a/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-client-b/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-client-c/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-server-2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eurekaserver-3/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hystrix/MyHystrix/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hystrix/admin-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hystrix/customer-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hystrix/rent-car-service/src/main/java" charset="UTF-8" />
+  </component>
+</project>
