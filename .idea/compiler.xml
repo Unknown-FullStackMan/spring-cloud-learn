@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eureka-client-b" />
+        <module name="login-service" />
         <module name="eureka-client-c" />
         <module name="hystrix" />
         <module name="customer-service" />
@@ -14,10 +15,12 @@
         <module name="rent-car-service" />
         <module name="MyHystrix" />
         <module name="eureka-server" />
-        <module name="eureka-server-2" />
         <module name="eurekaserver-3" />
+        <module name="gateway-service" />
+        <module name="eureka-server-2" />
         <module name="orderserive" />
         <module name="admin-service" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -37,6 +40,8 @@
       <module name="eureka-server" options="-parameters" />
       <module name="eureka-server-2" options="-parameters" />
       <module name="eurekaserver-3" options="-parameters" />
+      <module name="gateway-service" options="-parameters" />
+      <module name="login-service" options="-parameters" />
       <module name="orderserive" options="-parameters" />
       <module name="rent-car-service" options="-parameters" />
     </option>

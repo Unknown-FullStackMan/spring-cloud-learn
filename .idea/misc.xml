@@ -18,6 +18,9 @@
         <option value="$PROJECT_DIR$/hystrix/rent-car-service/pom.xml" />
         <option value="$PROJECT_DIR$/hystrix/MyHystrix/pom.xml" />
         <option value="$PROJECT_DIR$/hystrix/admin-service/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway/login-service/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway/gateway-service/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

@@ -1,0 +1,47 @@
+server:
+  port: 80 #网关默认80
+
+spring:
+  application:
+    name: gateway-serivce
+  cloud:
+    gateway:
+      enabled: true  #默认开启
+      routes:
+        - id: login-service-route #路由id，保持唯一即可
+#          uri: http://localhost:8081
+          uri: lb://local-service   #使用eureka通过服务名负载均衡到服务实例上, 请求路径就是/local-service/doLogin
+          predicates:   #匹配规则 默认不能作用于动态路由上面
+            - Path=/doLogin  #匹配规则 只要你path匹配上了/doLogin就往uri转发 并且将路径带上
+          filters:
+            - name: RequestRateLimiter #过滤器的名称
+              args: #过滤器的参数
+                  key-resolver: '#{@ipKeyResolver}'  #通过el表达式取ioc容器中bean的值
+                  redis-rate-limiter.replenishRate: 1 #生成令牌的速度
+                  redis-rate-limiter.burstCapacity: 3 #桶容量
+      discovery:
+        locator:
+          enabled: true #开启动态路由  开头通用应用名称 找到服务的功能
+          lower-case-service-id: true #开启服务名称小写
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowCredentials: true  #可以携带cookie
+            allowedHeaders: '*'
+            allowedMethods: '*'
+            allowedOrigins: '*'
+
+
+
+eureka:
+  client: #客户端相关配置
+    service-url: #指定注册地址
+      defaultZone: http://54.250.188.224:8761/eureka
+    registry-fetch-interval-seconds: 3 #拉去服务列表的间隔时间
+
+  instance:
+    hostname: localhost
+    instance-id: ${eureka.instance.hostname}:${spring.application.name}:${server.port} #主机名称：应用名:端口
+    prefer-ip-address: true #以IP的形式显示具体的服务信息
+    lease-renewal-interval-in-seconds: 5  #服务实例的续约的时间间隔
+

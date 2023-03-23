@@ -1,0 +1,20 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: login-serivce
+
+eureka:
+  client: #客户端相关配置
+    service-url: #指定注册地址
+      defaultZone: http://54.250.188.224:8761/eureka
+    registry-fetch-interval-seconds: 3 #拉去服务列表的间隔时间
+
+  instance:
+    hostname: localhost
+    instance-id: ${eureka.instance.hostname}:${spring.application.name}:${server.port} #主机名称：应用名:端口
+    prefer-ip-address: true #以IP的形式显示具体的服务信息
+    lease-renewal-interval-in-seconds: 5  #服务实例的续约的时间间隔
+
+
